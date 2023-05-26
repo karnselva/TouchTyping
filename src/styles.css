@@ -1,0 +1,133 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  background-color: lightblue;
+}
+.App {
+  font-family: sans-serif;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height:100vh ;
+  border: 1px solid red;
+}
+.App > *{
+  margin: 10px 0px;
+}
+/* flex change default behaviour*/
+/* <div class="letter letter--basic screenBasic-letter    ">&nbsp;</div>*/
+.words__container {
+  width: 600px;
+  max-width: 70%;
+  margin: 16px auto;
+  background-color: white;
+  text-align: justify;
+  border: 2px solid tomato;
+  padding: 16px;
+  position: relative;
+}
+.start__typing{
+  background-color:lightblue;  
+  position: absolute;
+  padding: 10px;
+  top: 0px;
+  border-radius: 19px;
+}
+.character__container {
+  display: flex;
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-size: 22px;
+}
+
+@keyframes cursorBlink {
+  0% {
+    border-color: #3295db;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #3295db;
+  }
+}
+
+.current__character {
+  color: #3295db;
+  border-bottom: 3px solid #3295db;
+  border-radius: 0;
+
+  animation-name: cursorBlink;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.correctly__typed {
+  background: #edf7e7;
+  color: #95c590;
+  transition: color 0.12s ease-in-out;
+}
+
+.wrongly__typed {
+  background-color: #ffdcd9;
+  color: #d55b60;
+}
+
+
+.typing__results_container{
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.typing__results_container >*{
+  margin: 4px;
+}
+button{
+  padding: 12px;
+  border: none;
+  border-radius:3px;
+  background-color: lightsalmon;
+  font-size: 16px;
+}
+
+
+button:hover{
+  background-color: lightcoral;
+}
+
+.timer{
+  background-color: lightgreen;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer > div{
+  background-color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display:grid;
+  place-items: center;
+  font-size: 32px;
+  margin-left: 2px;
+}
+
